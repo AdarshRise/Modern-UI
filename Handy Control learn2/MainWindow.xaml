@@ -13,35 +13,25 @@
         Width="800" BorderBrush="#FF707070" >
     <!-- Style="{StaticResource WindowWin10}"-->
     <hc:Window.Resources>
-        <Storyboard x:Key="OnLoaded1">
+
+        <Storyboard x:Key="TestAnimation" RepeatBehavior="Forever">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="But_Login">
-                <EasingDoubleKeyFrame KeyTime="0" Value="68.8"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="159.2"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="-20.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="170.4"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="But_Login">
-                <EasingDoubleKeyFrame KeyTime="0" Value="-1.6"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-32.8"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-9.6"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Key="Button_test">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="But_Login">
-                <EasingDoubleKeyFrame KeyTime="0" Value="17.6"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="281.6"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="But_Login">
-                <EasingDoubleKeyFrame KeyTime="0" Value="14.4"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-14.4"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+
     </hc:Window.Resources>
     <hc:Window.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="window">
-            <StopStoryboard BeginStoryboardName="OnLoaded1_BeginStoryboard"/>
-        </EventTrigger>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard Storyboard="{StaticResource Button_test}"/>
+            <BeginStoryboard Storyboard="{StaticResource TestAnimation}"/>
         </EventTrigger>
     </hc:Window.Triggers>
+
     <hc:Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0"/>
@@ -62,6 +52,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Button.RenderTransform>
+
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
