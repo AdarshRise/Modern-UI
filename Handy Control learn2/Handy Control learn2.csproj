@@ -97,7 +97,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\TWB_NoBackground.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Vault-icon128.png" />
     <Resource Include="Assets\Vault-icon16.png" />
