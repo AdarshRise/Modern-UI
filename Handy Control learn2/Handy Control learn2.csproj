@@ -97,5 +97,17 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Vault-icon128.png" />
+    <Resource Include="Assets\Vault-icon16.png" />
+    <Resource Include="Assets\Vault-icon24.png" />
+    <Resource Include="Assets\Vault-icon32.png" />
+    <Resource Include="Assets\Vault-icon48.png" />
+    <Resource Include="Assets\Vault-icon64.png" />
+    <Resource Include="Assets\Vault-icon72.png" />
+    <Resource Include="Assets\Vault-icon96.png" />
+    <Resource Include="Assets\Vault-iconBig.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

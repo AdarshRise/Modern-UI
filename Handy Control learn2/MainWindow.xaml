@@ -11,19 +11,19 @@
         ShowTitle="True"
         Height="450" 
         Width="800" BorderBrush="#FF707070" >
-                                                <!-- Style="{StaticResource WindowWin10}"-->
+    <!-- Style="{StaticResource WindowWin10}"-->
     <hc:Window.Resources>
 
 
-<!-- Inheriting the Handy Control button via "BasedOn"-->
-        
+        <!-- Inheriting the Handy Control button via "BasedOn"-->
+
         <Style TargetType="Button" x:Key="TestAnimation" BasedOn="{StaticResource ButtonInfo}">
-            
-<!--Putting Gradient Brush in Style -->
-            
+
+            <!--Putting Gradient Brush in Style -->
+
             <Setter Property="Button.Background">
                 <Setter.Value>
-                    
+
                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                         <GradientBrush.GradientStops>
                             <GradientStopCollection>
@@ -32,19 +32,19 @@
                             </GradientStopCollection>
                         </GradientBrush.GradientStops>
                     </LinearGradientBrush>
-                    
+
                 </Setter.Value>
 
             </Setter>
-            
-<!-- Setting the Visual Look-->
-            
+
+            <!-- Setting the Visual Look-->
+
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Height" Value="31" />
             <Setter Property="Width" Value="99" />
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="FontSize" Value="14"/>
-            
+
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect/>
@@ -57,9 +57,9 @@
             </Setter>
             <!---->
 
-            
-<!-- Mini Animation using Triggers{ Potential Use }-->            
-            
+
+            <!-- Mini Animation using Triggers{ Potential Use }-->
+
             <!--
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -92,26 +92,26 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </Style.Triggers>
-     
-         </Style>
 
-     
+        </Style>
+
+
     </hc:Window.Resources>
- 
+
     <hc:Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0"/>
             <GradientStop Color="White" Offset="1"/>
         </LinearGradientBrush>
     </hc:Window.Background>
-    
-<!--********************************           Project Starts Here                          ***************************************************-->
+
+    <!--********************************           Project Starts Here                          ***************************************************-->
 
 
     <Grid>
-<!-- Old Style Buttons-->
-        
-                                                    <!--
+        <!-- Old Style Buttons-->
+
+        <!--
                                                     <Button x:Name="But_Login" Style="{StaticResource ButtonInfo}" Foreground="White"   FontWeight="DemiBold" FontSize="14" Content="Login" HorizontalAlignment="Left" Margin="318,277,0,0" VerticalAlignment="Top" Width="99" Height="31" FontStretch="SemiExpanded" RenderTransformOrigin="0.5,0.5">
                                                         <Button.RenderTransform>
                                                             <TransformGroup>
@@ -146,9 +146,9 @@
                                                     </Button>
 
                                                   -->
-    
- <!-- New Style Buttons -->       
-        
+
+        <!-- New Style Buttons -->
+
         <Button x:Name="But_Register" Content="Register" Style="{StaticResource ResourceKey=TestAnimation}"  Margin="528,205,166.6,184"  >
             <Button.RenderTransform>
                 <TransformGroup>
@@ -170,6 +170,16 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        
+        <hc:Carousel IsCenter="True" AutoRun="True" Background="Transparent" HorizontalAlignment="Left" Height="261.6" Margin="195.8,108.8,0,0" VerticalAlignment="Top" Width="274.4">
+            <Image Width="274.4" Height="261.6" Source="./Assets/Vault-iconBig.png"/>
+            <Image Width="274.4" Height="261.6" Source="./Assets/Vault-iconBig.png"/>
+            <Grid Width="200">
+                <Image Source="./Assets/Vault-icon128.png"/>
+                <TextBlock Text="Secure" Style="{StaticResource TextBlockLargeBold}"/>
+            </Grid>
+            <Image Width="274.4" Height="261.6" Source="./Assets/Vault-iconBig.png"/>
+            <Image Width="274.4" Height="261.6" Source="./Assets/Vault-iconBig.png"/>
+        </hc:Carousel>
+
     </Grid>
 </hc:Window>
