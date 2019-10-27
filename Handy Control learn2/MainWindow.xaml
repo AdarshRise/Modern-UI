@@ -94,9 +94,36 @@
             </Style.Triggers>
 
         </Style>
+        <Storyboard x:Key="tWb">
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="animationPath">
+                <EasingPointKeyFrame KeyTime="0:0:0.1" Value="0.501,0.516"/>
+                <EasingPointKeyFrame KeyTime="0:0:5" Value="0.544,0.507"/>
+                <EasingPointKeyFrame KeyTime="0:0:6" Value="0.534,0.505"/>
+            </PointAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="animationPath">
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="LightGray"/>
+                <EasingColorKeyFrame KeyTime="0:0:5" Value="Black"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="animationPath">
+                <EasingColorKeyFrame KeyTime="0:0:5" Value="Black"/>
+                <EasingColorKeyFrame KeyTime="0:0:6" Value="#00000000"/>
+            </ColorAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="animationPath">
+                <DiscreteObjectKeyFrame KeyTime="0:0:5" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:6" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                <DiscreteObjectKeyFrame KeyTime="0:0:6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
 
 
     </hc:Window.Resources>
+    <hc:Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource tWb}"/>
+        </EventTrigger>
+    </hc:Window.Triggers>
 
     <hc:Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -180,10 +207,20 @@
             <Image Width="274.4" Height="261.6" Source="./Assets/Vault-iconBig.png"/>
             <Image Width="274.4" Height="261.6" Source="./Assets/Vault-iconBig.png"/>
         </hc:Carousel>
-        <hc:AnimationPath StrokeThickness="2" Duration="0:0:12" HorizontalAlignment="Left" Height="279.8" Margin="27,130.6,0,0" Stroke="Black" VerticalAlignment="Top" Width="317.6" Data="M33.935,157.39998 L59,162.8 141.4,359.60075 186.19999,260.40037 200.6,244.40031 211.79999,259.60036 256.59998,360.40074 340.59997,162 365.93496,154.99998 277.93497,363.60071 236.59999,363.60072 199.79999,279.60041 163,362.0007 119.8,362.80071 z"/>
-                
+        <hc:AnimationPath x:Name="animationPath" StrokeThickness="2" Fill="Transparent" Duration="0:0:12" HorizontalAlignment="Left" Height="279.8" Margin="63,78.6,0,0" Stroke="Black" VerticalAlignment="Top" Width="317.6" Data="M33.935,157.39998 L59,162.8 141.4,359.60075 186.19999,260.40037 200.6,244.40031 211.79999,259.60036 256.59998,360.40074 340.59997,162 365.93496,154.99998 277.93497,363.60071 236.59999,363.60072 199.79999,279.60041 163,362.0007 119.8,362.80071 z"/>
+
+
+        <Image x:Name="image" Visibility="Collapsed" Source="./Assets/TWB_NoBackground.png" HorizontalAlignment="Left" Height="380" Margin="20.4,32.4,0,0" VerticalAlignment="Top" Width="391.8" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <!--
-        <Image Source="./Assets/TWB_NoBackground.png" HorizontalAlignment="Left" Height="380" Margin="0,134.2,0,-93.8" VerticalAlignment="Top" Width="391.8"/>
         <Path  Data="M33.935,157.39998 L59,162.8 141.4,359.60075 186.19999,260.40037 200.6,244.40031 211.79999,259.60036 256.59998,360.40074 340.59997,162 365.93496,154.99998 277.93497,363.60071 236.59999,363.60072 199.79999,279.60041 163,362.0007 119.8,362.80071 z" Fill="Transparent" HorizontalAlignment="Left" Height="210.6" Margin="29.2,81.4,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="334"/>
         -->
 
