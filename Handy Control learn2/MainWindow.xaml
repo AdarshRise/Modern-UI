@@ -10,7 +10,7 @@
        
         ShowTitle="True"
         Height="450" 
-        Width="800" BorderBrush="#FF707070" >
+        Width="800" BorderBrush="#FF707070" ResizeMode="NoResize" WindowStyle="None" >
     <!-- Style="{StaticResource WindowWin10}"-->
     <hc:Window.Resources>
 
@@ -127,6 +127,15 @@
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="progressBar">
                 <EasingColorKeyFrame KeyTime="0:0:6" Value="White"/>
             </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" Storyboard.TargetName="textBlock">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="2"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="ProgressBar" RepeatBehavior="Forever">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="progressBar">
@@ -239,13 +248,39 @@
         </Button>
         <hc:Carousel IsCenter="True" AutoRun="True" Background="Transparent" HorizontalAlignment="Left" Height="261.6" Margin="479.6,30.4,0,0" VerticalAlignment="Top" Width="274.4">
             <Image Width="274.4" Height="261.6" Source="./Assets/Vault/Vault-iconBig.png"/>
-            <Image Width="274.4" Height="261.6" Source="./Assets/Privacy/privacy-iconBig.png"/>
+            <Grid Width="274.4">
+                <Image Width="274.4" Height="261.6" Source="./Assets/Privacy/privacy-iconBig.png"/>
+                <TextBlock x:Name="TB_Privacy" Text="Privacy" Style="{StaticResource TextBlockLargeBold}">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Grid>
             <Grid Width="274.4">
                 <Image Width="274.4" Height="261.6" Source="./Assets/HidePassword/HidePasswordBig.png"/>
-                <TextBlock Text="Secure" Style="{StaticResource TextBlockLargeBold}"/>
+                <TextBlock x:Name="textBlock" Text="Password" Style="{StaticResource TextBlockLargeBold}">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                      </TextBlock.Effect>
+                </TextBlock>
             </Grid>
-            <Image Width="274.4" Height="261.6" Source="./Assets/HideMessage/HideMessage-iconBig.png"/>
-            <Image Width="274.4" Height="261.6" Source="./Assets/HideImage/HideImagebig.png"/>
+            <Grid Width="274.4">
+                <Image Width="274.4" Height="261.6" Source="./Assets/HideMessage/HideMessage-iconBig.png"/>
+                <TextBlock x:Name="TB_Message" Margin="0 60 0 0" Text="Message" Style="{StaticResource TextBlockLargeBold}">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Grid>
+            <Grid Width="274.4">
+                <Image Width="274.4" Height="261.6" Source="./Assets/HideImage/HideImagebig.png"/>
+                <TextBlock x:Name="TB_Image" Margin="10 100 0 0"  Text="Image" Style="{StaticResource TextBlockLargeBold}">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Grid>
+           
         </hc:Carousel>
         <hc:AnimationPath x:Name="animationPath" StrokeThickness="2" Fill="Transparent" Duration="0:0:12" HorizontalAlignment="Left" Height="279.8" Margin="63,78.6,0,0" Stroke="Black" VerticalAlignment="Top" Width="317.6" Data="M33.935,157.39998 L59,162.8 141.4,359.60075 186.19999,260.40037 200.6,244.40031 211.79999,259.60036 256.59998,360.40074 340.59997,162 365.93496,154.99998 277.93497,363.60071 236.59999,363.60072 199.79999,279.60041 163,362.0007 119.8,362.80071 z"/>
 
@@ -290,5 +325,12 @@
         <!--
         <Path Data="M134.2,124 C135.8,192 181.7,194.7 214.5,189.1 247.3,183.5 259.3,157.9 241.7,129.9 224.1,101.9 184.09988,95.500002 169.69991,104.3 155.29995,113.1 134.2,124 134.2,124 z" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="91.386" Margin="134.2,100.622,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="116.597"/>
         -->
+        <Button  Height="34" Width="34"  Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="2 2" RenderTransformOrigin="0.557,1.043">
+            <StackPanel Orientation="Horizontal">
+                <Image  Source="./Assets/WinButtons/Close2Button24.png"/>
+            </StackPanel>
+                
+            
+        </Button>
     </Grid>
 </hc:Window>

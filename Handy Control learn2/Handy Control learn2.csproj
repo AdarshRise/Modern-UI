@@ -157,5 +157,19 @@
     <Resource Include="Assets\HidePassword\HidePassword96.png" />
     <Resource Include="Assets\HidePassword\HidePasswordBig.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\WinButtons\BlueButton16.png" />
+    <Resource Include="Assets\WinButtons\BlueButton24.png" />
+    <Resource Include="Assets\WinButtons\Close2Button16.png" />
+    <Resource Include="Assets\WinButtons\Close2Button24.png" />
+    <Resource Include="Assets\WinButtons\CloseButton16.png" />
+    <Resource Include="Assets\WinButtons\CloseButton24.png" />
+    <Resource Include="Assets\WinButtons\GreenButton16.png" />
+    <Resource Include="Assets\WinButtons\GreenButton24.png" />
+    <Resource Include="Assets\WinButtons\GreyButton16.png" />
+    <Resource Include="Assets\WinButtons\GreyButton24.png" />
+    <Resource Include="Assets\WinButtons\MinimizeButton16.png" />
+    <Resource Include="Assets\WinButtons\MinimizeButton24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
