@@ -359,8 +359,7 @@
         </ProgressBar.RenderTransform>
         </ProgressBar>
         -->
-<!-- Long Version of down method-->
-        <!--
+
         <ProgressBar Value="50" Height="19" Background="Transparent" Margin="515,391,43,0" VerticalAlignment="Top" Style="{StaticResource ProgressBarPrimaryStripe}">
             <ProgressBar.Foreground>
                 <DrawingBrush Viewport="0,0,20,32" TileMode="Tile" ViewportUnits="Absolute" Stretch="None">
@@ -388,19 +387,7 @@
                 </DrawingBrush>
             </ProgressBar.Foreground>
         </ProgressBar>
--->
-        <ProgressBar  Value="50" Height="19" Background="Transparent" Margin="480,6,78,0" VerticalAlignment="Top" Style="{StaticResource ProgressBarPrimaryStripe}">
 
-            <ProgressBar.Resources>
-                <Color x:Key="DarkPrimaryColor">Black</Color>
-            </ProgressBar.Resources>
-            <ProgressBar.Foreground>
-                <SolidColorBrush>
-                    Transparent
-                </SolidColorBrush>
-            </ProgressBar.Foreground>
-            
-        </ProgressBar>
 
     </Grid>
 </hc:Window>
