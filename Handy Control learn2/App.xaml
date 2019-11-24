@@ -1,6 +1,7 @@
 ﻿<Application x:Class="Handy_Control_learn2.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -8,6 +9,21 @@
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+
+            <Style x:Key="MessageBoxCustom" TargetType="hc:MessageBox" BasedOn="{StaticResource {x:Type hc:MessageBox}}">
+                <Setter Property="NonClientAreaBackground" Value="#23c9de"/>
+                <Setter Property="OtherButtonHoverBackground" Value="#9c6f25"/>
+                <Setter Property="OtherButtonForeground" Value="Red"/>
+                <Setter Property="OtherButtonHoverForeground" Value="Green"/>
+                <Setter Property="NonClientAreaForeground" Value="Yellow"/>
+                <Setter Property="CloseButtonForeground" Value="Pink"/>
+            </Style>
+
         </ResourceDictionary>
+
+     
+           
+     
     </Application.Resources>
 </Application>

@@ -9,8 +9,10 @@
         WindowStartupLocation="CenterScreen"
        
         ShowTitle="True"
-        Height="450" 
-        Width="800" BorderBrush="#FF707070" ResizeMode="NoResize" WindowStyle="None" >
+        Height="auto" 
+        Width="auto" 
+        SizeToContent="WidthAndHeight"
+        BorderBrush="#FF707070" ResizeMode="NoResize" WindowStyle="None" >
     <!-- Style="{StaticResource WindowWin10}"-->
     <hc:Window.Resources>
 
@@ -167,6 +169,7 @@
 
 
     </hc:Window.Resources>
+    
     <hc:Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource tWb}"/>
@@ -184,7 +187,7 @@
     <!--********************************           Project Starts Here                          ***************************************************-->
 
 
-    <Grid>
+    <Grid HorizontalAlignment="Right"  Width="800" Height="450" VerticalAlignment="Top">
         <!-- Old Style Buttons-->
 
         <!--
@@ -339,13 +342,27 @@
         <!--
         <Path Data="M134.2,124 C135.8,192 181.7,194.7 214.5,189.1 247.3,183.5 259.3,157.9 241.7,129.9 224.1,101.9 184.09988,95.500002 169.69991,104.3 155.29995,113.1 134.2,124 134.2,124 z" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="91.386" Margin="134.2,100.622,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="116.597"/>
         -->
-        <Button  Height="34" Width="34"  Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="2 2" RenderTransformOrigin="0.557,1.043">
-            <StackPanel Orientation="Horizontal">
+        <Button x:Name="But_Close" Click="But_Close_Click" Height="25" Width="36"  Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 2 2 2" >
+           
+            <Button.Content>
                 <Image  Source="./Assets/WinButtons/Close2Button24.png"/>
-            </StackPanel>
-
-
+            </Button.Content>
+          
         </Button>
+
+        <Button x:Name="Test" Content="IsButton" Click="Test_Click" Height="20" Width="60" HorizontalAlignment="Left" Margin="370,215,0,0" VerticalAlignment="Top">
+            
+        </Button>
+        
+        <Button x:Name="But_Min" Click="But_Min_Click" Height="25" Width="36"  Background="Green" BorderBrush="Red" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 2 24 2" ToolTip="Minimize" >
+            <Button.Content>
+            
+                    <Image  Height="auto" Width="auto" Source="./Assets/WinButtons/MinimizeButton24.png" />
+     
+            </Button.Content>
+          
+        </Button>
+
         <!-- Not working-->
         <!--
         <ProgressBar HorizontalAlignment="Left" Foreground="Azure" Value="50" Style="{StaticResource ProgressBarPrimaryStripe}" Height="18.8" Margin="542.4,410.4,0,0" VerticalAlignment="Top" Width="211.6">
